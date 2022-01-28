@@ -72,13 +72,16 @@ def createHeaders():
 
 Names1 = pandaDataframe['Navn1']
 Names2 = pandaDataframe['Navn2']
-Headers = createHeaders()
+scores = pandaDataframe['Point']
+nodeHeaders = createHeaders()
+Headers = ["Score"] + nodeHeaders
 listOfBinNodes = list()
 
 for i in range(len(Names1)):
+    score = [scores[i]]
     binName1 = nameToBinaryNodes(Names1[i])
     binName2 = nameToBinaryNodes(Names2[i])
-    binRow = binName1 + binName2
+    binRow = score + binName1 + binName2
     listOfBinNodes.append(binRow)
     
 df = pandas.DataFrame(listOfBinNodes, columns=Headers)
