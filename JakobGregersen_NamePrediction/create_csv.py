@@ -83,7 +83,7 @@ for i in range(len(Names1)):
     
 df = pandas.DataFrame(listOfBinNodes, columns=Headers)
 
-sheetAsCSV = df.to_csv(sep=';')
+sheetAsCSV = df.to_csv()
 
 print("started")
 myfile = open("./data.csv", "w")
