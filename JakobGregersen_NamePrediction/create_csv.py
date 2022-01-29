@@ -88,8 +88,8 @@ df = pandas.DataFrame(listOfBinNodes, columns=Headers)
 
 sheetAsCSV = df.to_csv(index=False)
 
-print("started")
+print("START: Extract data...")
 myfile = open("./data.csv", "w")
 n = myfile.write(sheetAsCSV)
 myfile.close()
-print("finished")
+print("END:  Extract data.")
