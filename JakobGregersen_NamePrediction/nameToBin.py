@@ -49,7 +49,6 @@ def doubleNameToBinaryNodes(str):
         result = nameToBinaryNodes(names[0])
         result1 = nameToBinaryNodes(names[1])
         returnList = result + result1
-        print(returnList)
     else: 
         print("ERROR: Neither input name can be longer than 10 characters.")
     return returnList
@@ -61,7 +60,7 @@ if __name__ == "__main__":
         convertName = input()
         if (convertName.upper() != "EXIT") & (convertName.upper() != "Q"):
             try:
-                doubleNameToBinaryNodes(convertName)
+                print(doubleNameToBinaryNodes(convertName))
             except: 
                 print("ERROR: Input must be two names (Separated by a whitespace)")
         else:
