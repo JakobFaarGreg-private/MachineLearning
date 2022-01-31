@@ -43,19 +43,25 @@ def nameToBinaryNodes(str):
     returnList = [item for sublist in returnList for item in sublist]
     return returnList
 
+def doubleNameToBinaryNodes(str):
+    names = str.split(" ")
+    if (len(names[0]) <= 10) & (len(names[1]) <= 10):
+        result = nameToBinaryNodes(names[0])
+        result1 = nameToBinaryNodes(names[1])
+        returnList = result + result1
+        print(returnList)
+    else: 
+        print("ERROR: Neither input name can be longer than 10 characters.")
+    return returnList
+    
+
 stop = False
 while(not stop):
     print("Name to convert:")
     convertName = input()
     if (convertName.upper() != "EXIT") & (convertName.upper() != "Q"):
         try:
-            names = convertName.split(" ")
-            if (len(names[0]) <= 10) & (len(names[1]) <= 10):
-                result = nameToBinaryNodes(names[0])
-                result1 = nameToBinaryNodes(names[1])
-                print(result + result1)
-            else: 
-                print("ERROR: Neither input name can be longer than 10 characters.")
+            doubleNameToBinaryNodes(convertName)
         except: 
             print("ERROR: Input must be two names (Separated by a whitespace)")
     else:
