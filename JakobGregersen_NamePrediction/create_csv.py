@@ -1,10 +1,7 @@
-from array import array
-from os import write
-from tkinter.font import names
 import pandas
 from nameToBin import nameToBinaryNodes
 
-location = ("./Maries_navne.xlsx")
+location = ("/Users/jakobfaarbaekgregersen/Documents/GitHub/MachineLearning/JakobGregersen_NamePrediction/Maries_navne.xlsx")
 pandaDataframe = pandas.read_excel(location, sheet_name="Ark1")
 
 
